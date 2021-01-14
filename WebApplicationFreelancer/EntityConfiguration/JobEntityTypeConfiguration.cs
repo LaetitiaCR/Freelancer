@@ -17,23 +17,36 @@ namespace WebApplicationFreelancer.EntityConfiguration
             builder.HasKey(o => o.JobId);
             builder
                 .Property(b => b.JobState)
-                    .HasColumnName("Description")
+                    .HasColumnName("JobState")
+                    .HasColumnType("varchar")
+                     .HasMaxLength(10)
                     .IsRequired();
             builder
                 .Property(b => b.JobTitle)
-                    .HasColumnName("Description")
+                    .HasColumnName("JobTitle")
+                    .HasColumnType("varchar")
+                     .HasMaxLength(100)
                     .IsRequired();
             builder
                 .Property(b => b.JobStart)
-                    .HasColumnName("Description")
+                    .HasColumnName("JobStart")
+                    .HasColumnType("Date")
+                    .HasDefaultValueSql("GetDate()")
                     .IsRequired();
+
+            
+
             builder
                 .Property(b => b.JobEnd)
-                    .HasColumnName("Description")
+                    .HasColumnName("JobEnd")
+                    .HasColumnType("Date")
+                    .HasDefaultValueSql("GetDate()")
                     .IsRequired();
+
             builder
                 .Property(b => b.JobDescription)
-                    .HasColumnName("Description")
+                    .HasColumnName("JobDescription")
+                    .HasColumnType("varchar")
                     .IsRequired();
 
         }

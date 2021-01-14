@@ -16,11 +16,15 @@ namespace WebApplicationFreelancer.EntityConfiguration
             builder.HasKey(o => o.CustomerId);
             builder
                 .Property(b => b.CustomerName)
-                        .HasColumnName("Description")
+                        .HasColumnName("CustomerName")
+                        .HasColumnType("varchar")
+                         .HasMaxLength(100)
                         .IsRequired();
             builder
                 .Property(b => b.CustomerEmail)
-                        .HasColumnName("Description")
+                        .HasColumnName("CustomerEmail")
+                        .HasColumnType("varchar")
+                         .HasMaxLength(255)
                         .IsRequired();
            
         }

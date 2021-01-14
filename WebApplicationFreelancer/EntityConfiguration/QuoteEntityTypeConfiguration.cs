@@ -17,23 +17,31 @@ namespace WebApplicationFreelancer.EntityConfiguration
             builder.HasKey(o => o.QuoteId);
             builder
                .Property(b => b.QuoteState)
-                   .HasColumnName("Description")
+                   .HasColumnName("QuoteState")
+                   .HasColumnType("varchar")
+                   .HasMaxLength(10)
                    .IsRequired();
             builder
                .Property(b => b.QuoteDate)
-                   .HasColumnName("Description")
+                   .HasColumnName("QuoteDate")
+                   .HasColumnType("Date")
+                    .HasDefaultValueSql("GetDate()")
                    .IsRequired();
             builder
                .Property(b => b.QuoteAmount)
-                   .HasColumnName("Description")
+                   .HasColumnName("QuoteAmount")
+                   .HasColumnType("int")
                    .IsRequired();
             builder
                .Property(b => b.QuoteFinalDate)
-                   .HasColumnName("Description")
+                   .HasColumnName("QuoteFinalDate")
+                   .HasColumnType("Date")
+                    .HasDefaultValueSql("GetDate()")
                    .IsRequired();
             builder
                .Property(b => b.QuoteFinalAmount)
-                   .HasColumnName("Description")
+                   .HasColumnName("QuoteFinalAmount")
+                    .HasColumnType("int")
                    .IsRequired();
 
 
