@@ -41,6 +41,8 @@ namespace WebApplicationFreelancer.Models
         //text
         public string JobDescription { get; set; }
 
+
+
         public virtual ICollection<Customer> Customers { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebApplicationFreelancer.Dal;
+using WebApplicationFreelancer.Data;
 
 namespace WebApplicationFreelancer.Migrations
 {
@@ -44,7 +44,7 @@ namespace WebApplicationFreelancer.Migrations
 
                     b.HasIndex("JobId");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("WebApplicationFreelancer.Models.Customercat", b =>
@@ -71,7 +71,7 @@ namespace WebApplicationFreelancer.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Customercat");
+                    b.ToTable("Customercats");
                 });
 
             modelBuilder.Entity("WebApplicationFreelancer.Models.Job", b =>
@@ -109,7 +109,7 @@ namespace WebApplicationFreelancer.Migrations
 
                     b.HasIndex("QuoteId");
 
-                    b.ToTable("Job");
+                    b.ToTable("Jobs");
                 });
 
             modelBuilder.Entity("WebApplicationFreelancer.Models.Quote", b =>
@@ -139,7 +139,7 @@ namespace WebApplicationFreelancer.Migrations
 
                     b.HasKey("QuoteId");
 
-                    b.ToTable("Quote");
+                    b.ToTable("Quotes");
                 });
 
             modelBuilder.Entity("WebApplicationFreelancer.Models.Customer", b =>

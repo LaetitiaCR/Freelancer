@@ -3,12 +3,11 @@ using Microsoft.IdentityModel.Protocols;
 using System;
 using System.Collections.Generic;
 
-using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplicationFreelancer.Models;
 
-namespace WebApplicationFreelancer.Dal
+namespace WebApplicationFreelancer.Data
 {
     public class FreelancerContext : DbContext
     {
@@ -17,11 +16,11 @@ namespace WebApplicationFreelancer.Dal
         { }
 
         //      <TypeDuModele>  table
-        public DbSet<Customer> Customer{ get; set; }
+        public DbSet<Customer> Customers { get; set; }
         
-        public DbSet<Customercat> Customercat { get; set; }
-        public DbSet<Job> Job { get; set; }
-        public DbSet<Quote> Quote { get; set; }
+        public DbSet<Customercat> Customercats { get; set; }
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<Quote> Quotes { get; set; }
 
 
         /*

@@ -9,7 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplicationFreelancer.Dal;
+using WebApplicationFreelancer.Data;
+
 
 namespace WebApplicationFreelancer
 {

@@ -8,7 +8,7 @@ namespace WebApplicationFreelancer.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Quote",
+                name: "Quotes",
                 columns: table => new
                 {
                     quote_id = table.Column<int>(type: "int", nullable: false)
@@ -21,11 +21,11 @@ namespace WebApplicationFreelancer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Quote", x => x.quote_id);
+                    table.PrimaryKey("PK_Quotes", x => x.quote_id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Job",
+                name: "Jobs",
                 columns: table => new
                 {
                     job_id = table.Column<int>(type: "int", nullable: false)
@@ -39,17 +39,17 @@ namespace WebApplicationFreelancer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Job", x => x.job_id);
+                    table.PrimaryKey("PK_Jobs", x => x.job_id);
                     table.ForeignKey(
-                        name: "FK_Job_Quote_QuoteId",
+                        name: "FK_Jobs_Quotes_QuoteId",
                         column: x => x.QuoteId,
-                        principalTable: "Quote",
+                        principalTable: "Quotes",
                         principalColumn: "quote_id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Customer",
+                name: "Customers",
                 columns: table => new
                 {
                     customer_id = table.Column<int>(type: "int", nullable: false)
@@ -60,17 +60,17 @@ namespace WebApplicationFreelancer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customer", x => x.customer_id);
+                    table.PrimaryKey("PK_Customers", x => x.customer_id);
                     table.ForeignKey(
-                        name: "FK_Customer_Job_JobId",
+                        name: "FK_Customers_Jobs_JobId",
                         column: x => x.JobId,
-                        principalTable: "Job",
+                        principalTable: "Jobs",
                         principalColumn: "job_id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Customercat",
+                name: "Customercats",
                 columns: table => new
                 {
                     customercat_id = table.Column<int>(type: "int", nullable: false)
@@ -81,44 +81,44 @@ namespace WebApplicationFreelancer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customercat", x => x.customercat_id);
+                    table.PrimaryKey("PK_Customercats", x => x.customercat_id);
                     table.ForeignKey(
-                        name: "FK_Customercat_Customer_CustomerId",
+                        name: "FK_Customercats_Customers_CustomerId",
                         column: x => x.CustomerId,
-                        principalTable: "Customer",
+                        principalTable: "Customers",
                         principalColumn: "customer_id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Customer_JobId",
-                table: "Customer",
-                column: "JobId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Customercat_CustomerId",
-                table: "Customercat",
+                name: "IX_Customercats_CustomerId",
+                table: "Customercats",
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Job_QuoteId",
-                table: "Job",
+                name: "IX_Customers_JobId",
+                table: "Customers",
+                column: "JobId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Jobs_QuoteId",
+                table: "Jobs",
                 column: "QuoteId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Customercat");
+                name: "Customercats");
 
             migrationBuilder.DropTable(
-                name: "Customer");
+                name: "Customers");
 
             migrationBuilder.DropTable(
-                name: "Job");
+                name: "Jobs");
 
             migrationBuilder.DropTable(
-                name: "Quote");
+                name: "Quotes");
         }
     }
 }

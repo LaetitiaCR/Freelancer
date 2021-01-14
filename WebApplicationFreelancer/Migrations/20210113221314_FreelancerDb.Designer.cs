@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebApplicationFreelancer.Dal;
+using WebApplicationFreelancer.Data;
 
 namespace WebApplicationFreelancer.Migrations
 {
     [DbContext(typeof(FreelancerContext))]
-    [Migration("20210113160525_FreelancerDb")]
+    [Migration("20210113221314_FreelancerDb")]
     partial class FreelancerDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,7 +46,7 @@ namespace WebApplicationFreelancer.Migrations
 
                     b.HasIndex("JobId");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("WebApplicationFreelancer.Models.Customercat", b =>
@@ -73,7 +73,7 @@ namespace WebApplicationFreelancer.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Customercat");
+                    b.ToTable("Customercats");
                 });
 
             modelBuilder.Entity("WebApplicationFreelancer.Models.Job", b =>
@@ -111,7 +111,7 @@ namespace WebApplicationFreelancer.Migrations
 
                     b.HasIndex("QuoteId");
 
-                    b.ToTable("Job");
+                    b.ToTable("Jobs");
                 });
 
             modelBuilder.Entity("WebApplicationFreelancer.Models.Quote", b =>
@@ -141,7 +141,7 @@ namespace WebApplicationFreelancer.Migrations
 
                     b.HasKey("QuoteId");
 
-                    b.ToTable("Quote");
+                    b.ToTable("Quotes");
                 });
 
             modelBuilder.Entity("WebApplicationFreelancer.Models.Customer", b =>
