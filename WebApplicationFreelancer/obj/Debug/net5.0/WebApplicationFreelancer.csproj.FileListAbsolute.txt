@@ -196,5 +196,4 @@ C:\Users\Laeti\Desktop\MyGitCRP\Freelancer\WebApplicationFreelancer\obj\Debug\ne
 C:\Users\Laeti\Desktop\MyGitCRP\Freelancer\WebApplicationFreelancer\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Laeti\Desktop\MyGitCRP\Freelancer\WebApplicationFreelancer\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
 C:\Users\Laeti\Desktop\MyGitCRP\Freelancer\WebApplicationFreelancer\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
-C:\Users\Laeti\Desktop\MyGitCRP\Freelancer\WebApplicationFreelancer\obj\Debug\net5.0\WebApplicationFreelancer.csprojAssemblyReference.cache
 C:\Users\Laeti\Desktop\MyGitCRP\Freelancer\WebApplicationFreelancer\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
