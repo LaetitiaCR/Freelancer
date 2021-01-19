@@ -20,13 +20,16 @@ namespace WebApplicationFreelancer.Data
         public class Quote
         {
             public int QuoteId { get; set; }
-            public char QuoteState { get; set; }
+            public string QuoteState { get; set; }
             public DateTime QuoteDate { get; set; }
             public int QuoteAmount { get; set; }
             public DateTime QuoteFinalDate { get; set; }
             public int QuoteFinalAmount { get; set; }
 
-            public virtual ICollection<Job> Jobs { get; set; }
+
+
+            public int JobId { get; set; }
+            //public virtual ICollection<Job> Jobs { get; set; }
         }
     }
 }

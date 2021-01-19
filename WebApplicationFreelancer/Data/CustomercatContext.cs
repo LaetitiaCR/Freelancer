@@ -27,7 +27,7 @@ namespace WebApplicationFreelancer.Data
             public string CustomercatName { get; set; }
             public string CustomercatDescription { get; set; }
 
-            public Customer Customer { get; set; }
+            //public Customer Customer { get; set; }
         }
     }
 }

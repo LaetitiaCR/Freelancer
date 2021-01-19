@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebApplicationFreelancer.Models
 {
+    [Table("Quotes")]
     public class Quote
     {
         [Column("quote_id")]
@@ -15,7 +16,7 @@ namespace WebApplicationFreelancer.Models
 
         //[Required]
         [MaxLength(10)]
-        public char QuoteState { get; set; }
+        public string QuoteState { get; set; }
 
 
         //[Required]
@@ -33,6 +34,9 @@ namespace WebApplicationFreelancer.Models
 
         public int QuoteFinalAmount { get; set; }
 
-        public virtual ICollection<Job> Jobs { get; set; }
+
+        public int JobId { get; set; }
+
+        //public virtual ICollection<Job> Jobs { get; set; }
     }
 }

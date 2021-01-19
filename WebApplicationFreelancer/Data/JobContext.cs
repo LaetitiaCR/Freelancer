@@ -21,7 +21,7 @@ namespace WebApplicationFreelancer.Data
         public class Job
         { 
             public int JobId { get; set; }
-            public char JobState { get; set; }
+            public string JobState { get; set; }
             public string JobTitle { get; set; }
             public DateTime JobStart { get; set; }
 
@@ -30,9 +30,11 @@ namespace WebApplicationFreelancer.Data
             public string JobDescription { get; set; }
 
 
+            
+            public int CustomerId { get; set; }
 
-            public virtual ICollection<Customer> Customers { get; set; }
-            public Quote Quote { get; set; }
+            //public virtual ICollection<Customer> Customers { get; set; }
+            //public Quote Quote { get; set; }
         }
     }
 }

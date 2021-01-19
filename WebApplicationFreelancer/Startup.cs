@@ -1,16 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebApplicationFreelancer.Data;
-
+using WebApplicationConsoleEntity.Data;
 
 namespace WebApplicationFreelancer
 {
@@ -30,20 +24,27 @@ namespace WebApplicationFreelancer
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddMvc();
+
             //services.AddIdentity<UserModel, IdentityRole>().AddEntityFrameworkStores<MyDBContextName>().AddDefaultTokenProviders();
 
-            //services.AddControllers();
+            services.AddControllers();
+
 
 
             // Ajoute le support des controlleurs et du moteur de Vues Razor
             services.AddControllersWithViews();
 
-                        
+
             // référence le contexte de base de données FreelancerContext
-            services.AddDbContext<FreelancerContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("DbFreelancerConnectionString"))
-            );
-            
+            services.AddDbContext<FreelancerContext>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                
+                
+
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -65,7 +66,7 @@ namespace WebApplicationFreelancer
             
             //services.AddControllers();
             //services.AddDbContext<FreelancerContext>(
-            //options => options.UseSqlServer(connectionString));
+            //options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection");
             
 
 
@@ -90,6 +91,10 @@ namespace WebApplicationFreelancer
             app.UseDefaultFiles(); // active la gestion des extensions standard
             app.UseStaticFiles(); // active la gestion des fichiers statiques stockés dans le répertoire "wwwroot"
 
+        
+
+            // IApplicationBuilder applicationBuilder = app.UseMvc();
+
             app.UseRouting(); // active le routage (configuration ci-dessous)
 
             // ajout d'un point de terminaison HTTP
@@ -98,13 +103,17 @@ namespace WebApplicationFreelancer
             //      controller : nom du contrôleur à invoquer
             //      action     : nom de la méthode à exécuter dans le contrôleur invoqué
             //      id         : valeur injectée dans la méthode exécutée (la méthode doit alors posséder un argument nommé "id")
+
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}"
+                    
                 );
             });
+            
 
             /*
             app.UseEndpoints(endpoints =>

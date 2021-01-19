@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebApplicationFreelancer.Models
 {
+    [Table("Jobs")]
     public class Job
     {
 
@@ -17,7 +18,7 @@ namespace WebApplicationFreelancer.Models
 
         [Required]
         [MaxLength(10)]
-        public char JobState { get; set; }
+        public string JobState { get; set; }
 
 
         [Required]
@@ -43,6 +44,8 @@ namespace WebApplicationFreelancer.Models
 
 
 
-        public virtual ICollection<Customer> Customers { get; set; }
+        public int CustomerId { get; set; }
+
+        //public virtual ICollection<Customer> Customers { get; set; }
     }
 }

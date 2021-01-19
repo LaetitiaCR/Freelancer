@@ -1,36 +1,55 @@
-﻿<!doctype html>
-<html lang="fr">
+﻿<!DOCTYPE html>
+
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" href="~/css/main.css" />
-    <script src="~/js/main.js" defer></script>
 </head>
 <body>
     <header>
         <h1>@ViewBag.Title</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home/Index</a></li>
-                <li><a href="/">Jobs/Index</a></li>
-                <li><a href="/">Customers/Index</a></li>
-                <li><a href="/">CustomersCats/Index</a></li>
-                <li><a href="/">Quotes/Index</a></li>
-                
-            </ul>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-page="/Index" class="navbar-brand">WebApplicationFreelancer</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-page="/Index">Home</a></li>
+                        <li><a asp-page="/About">About</a></li>
+                        <li><a asp-page="/Contact">Contact</a></li>
+                        <li><a href="/">CustomersCats/Index</a></li>
+                        <li><a href="/Customercats/Details">CustomersCats/Details</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
-    <main>
-        @*
-            Une page de disposition doit obligatoirement appeler la fonction RenderBody().
-            RenderBody() affiche le contenu de la vue associée à la requête en cours
-        *@
 
-        @RenderBody()
+    <main>
+
+        <div class="container body-content">
+            @RenderBody()
+
+        </div>
+
+
+        <hr />
+
     </main>
+    
+
+
     <footer>
-        <!-- Commentaire HTML -->
+        <p>&copy; 2021 - WebApplicationFreelancer</p>
+        <p> @ViewBag.Author</p>
     </footer>
+
 </body>
 </html>

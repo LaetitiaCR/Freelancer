@@ -1,16 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Protocols;
 using System;
 using System.Collections.Generic;
-
-using System.Linq;
-using System.Threading.Tasks;
+using System.Configuration;
+using System.Text;
 using WebApplicationFreelancer.Models;
 
-namespace WebApplicationFreelancer.Data
+namespace WebApplicationConsoleEntity.Data
 {
     public class FreelancerContext : DbContext
     {
+        public FreelancerContext()
+        {
+        }
 
         public FreelancerContext(DbContextOptions<FreelancerContext> options): base(options)
         { }
@@ -22,6 +23,16 @@ namespace WebApplicationFreelancer.Data
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Quote> Quotes { get; set; }
 
+
+        /*
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Customer>().ToTable("Customer");
+            modelBuilder.Entity<Job>().ToTable("Job");
+            modelBuilder.Entity<Quote>().ToTable("Quote");
+        }
+        */
 
         /*
         protected override void OnModelCreating(ModelBuilder builder)
@@ -39,6 +50,17 @@ namespace WebApplicationFreelancer.Data
 
         */
 
+
+        /*
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=BddFreelancer;Trusted_Connection=True;MultipleActiveResultSets=true");
+
+        } 
+        */
+
+
+
         /*
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -51,6 +73,12 @@ namespace WebApplicationFreelancer.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }
+      
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<AuditEntry>();
         }
         */
 

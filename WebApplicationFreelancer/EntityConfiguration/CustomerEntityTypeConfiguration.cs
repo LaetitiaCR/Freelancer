@@ -26,7 +26,8 @@ namespace WebApplicationFreelancer.EntityConfiguration
                         .HasColumnType("varchar")
                          .HasMaxLength(255)
                         .IsRequired();
-           
+            
+
         }
 
         internal void Configure(EntityTypeBuilder<JobContext.Job> entityTypeBuilder)

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebApplicationFreelancer.Models
 {
+    [Table("Customercats")]
     public class Customercat
     {
 

@@ -32,9 +32,11 @@ namespace WebApplicationFreelancer.Data
             public string CustomerName { get; set; }
             public string CustomerEmail { get; set; }
 
+            public int CustomercatId { get; set; }
             
-            public ICollection<Customercat> Customercats { get; set; }
-            public Job Job { get; set; }
+            //public Customercats Customercats { get; set; }
+            //public ICollection<Customercat> Customercats { get; set; }
+            //public Job Job { get; set; }
         }
        
 
