@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WebApplicationConsoleEntity.Data;
+using WebApplicationFreelancer.Data;
 
 namespace WebApplicationFreelancer
 {

@@ -5,7 +5,7 @@ using System.Configuration;
 using System.Text;
 using WebApplicationFreelancer.Models;
 
-namespace WebApplicationConsoleEntity.Data
+namespace WebApplicationFreelancer.Data
 {
     public class FreelancerContext : DbContext
     {
