@@ -1,0 +1,28 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.TitleHead</title>
+    <link rel="stylesheet" href="~/css/main.css" />
+    <script src="~/js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>@ViewBag.Title</h1>
+
+    </header>
+    <main>
+        <a id="lienClients" href="/Customers">Customers</a>
+        @*
+        Une page de disposition doit obligatoirement appeler la fonction RenderBody().
+        RenderBody() affiche le contenu de la vue associée à la requête en cours
+        *@
+
+        @RenderBody()
+    </main>
+    <footer>
+        <!-- Commentaire HTML -->
+    </footer>
+</body>
+</html>

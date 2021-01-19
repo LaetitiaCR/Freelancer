@@ -26,6 +26,8 @@
                         <li><a asp-page="/Contact">Contact</a></li>
                         <li><a href="/">CustomersCats/Index</a></li>
                         <li><a href="/Customercats/Details">CustomersCats/Details</a></li>
+                        <li><a href="/Customercats/Create">CustomersCats/Create</a></li>
+                        <li><a href="/Customercats/Edits">CustomersCats/Edits</a></li>
                     </ul>
                 </div>
             </div>
@@ -36,6 +38,8 @@
 
         <div class="container body-content">
             @RenderBody()
+
+            @Html.ActionLink("Create New", "Create")
 
         </div>
 

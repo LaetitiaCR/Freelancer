@@ -1,47 +1,62 @@
 ﻿@model IEnumerable<WebApplicationFreelancer.Models.Customer>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Gestion des Clients";
 }
 
-<h1>Index</h1>
+        
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CustomerName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CustomerEmail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CustomercatId)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomercatId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CustomerId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+    <h1 class="">Clients Enregistrés</h1>
+
+    <p class="nonvisible">
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table" id="tableclients">
+        <thead>
+            <tr id="titretableclients">
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerEmail)
+                </th>
+
+                <th class="nonvisible">
+                    @Html.DisplayNameFor(model => model.CustomercatId)
+                </th>
+                <th>Actions</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody >
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="contenutable">
+                        @Html.DisplayFor(modelItem => item.CustomerName)
+                    </td>
+                    <td class="contenutable">
+                        @Html.DisplayFor(modelItem => item.CustomerEmail)
+                    </td>
+                    <td class="nonvisible">
+                        @Html.DisplayFor(modelItem => item.CustomercatId)
+                    </td>
+                    <td class="contenutable">
+                        <input type="checkbox" id="scales" name="scales" checked>
+                        <label>	❌ </label>
+
+                    </td>
+                    <td class="nonvisible">
+                        <a asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.CustomerId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.CustomerId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbodyid="contenutable">
+    </table>
+
+    <h2>Informations</h2>
+
+    <p>Largeur max du conteneur : <span id="insertLargeurEcran"></span></p>

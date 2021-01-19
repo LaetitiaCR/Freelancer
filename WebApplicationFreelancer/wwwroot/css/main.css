@@ -1,0 +1,21 @@
+﻿body {                
+
+}
+.nonvisible{
+    display: none;   
+}
+
+#tableclients{
+
+    width: 100%;
+    
+}
+
+#titretableclients{
+    background-color: black;
+    color: white;
+}
+
+.contenutable {
+    background-color: rgb(255, 255, 238);
+}
